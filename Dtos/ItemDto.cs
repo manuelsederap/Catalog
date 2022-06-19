@@ -1,7 +1,7 @@
 using System;
 
-namespace Catalog.Entities {
-    public record Item {
+namespace Catalog.Dtos {
+    public record ItemDto {
         public Guid Id { get; init; }
 
         public string Name { get; init; }
@@ -9,5 +9,5 @@ namespace Catalog.Entities {
         public decimal Price { get; init; } 
 
         public DateTimeOffset CreatedDate { get; init; }
-    }
+    }    
 }
