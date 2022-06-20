@@ -40,7 +40,7 @@ namespace Catalog.Controllers {
         // endpoint with "/items" and POST method invoke this function
         [HttpPost]
         public ActionResult<ItemDto> CreateItem(CreateItemDto itemDto) {
-            
+
             Item item = new() {
                 Id = Guid.NewGuid(),
                 Name = itemDto.Name,
@@ -53,7 +53,7 @@ namespace Catalog.Controllers {
         }
 
         // endpoint with "/items" and PUT method invoke this function
-        [HttpPut]
+        [HttpPut("{id}")]
         public ActionResult UpdateItem(Guid id, UpdateItemDto itemDto) {
 
             var existingItem = repository.GetItem(id);
