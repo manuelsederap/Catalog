@@ -75,7 +75,11 @@ namespace Catalog
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog v1"));
             }
 
-            app.UseHttpsRedirection();
+            // allow http redirection only in development environment
+            if (env.IsDevelopment()) {
+                // redirect from http to https
+                app.UseHttpsRedirection();
+            }
 
             app.UseRouting();
 
